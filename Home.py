@@ -1,16 +1,21 @@
 import streamlit as st
 import openai
 from PIL import Image
-
+import requests
+from io import BytesIO
 
 st.set_page_config(
     page_title = "ChatGPT with DALL-E",
     page_icon="👋"
 )
-img = Image.open('./img/style.png')
-img2 = Image.open('./img/style_niji.png')
-img3 = Image.open('./img/quality.png')
-img4 = Image.open('./img/stylize.png')
+response = requests.get("https://raw.githubusercontent.com/Lee-Siyoung/chatgpt-with-dalle/main/img/style.PNG")
+response2 = requests.get("https://raw.githubusercontent.com/Lee-Siyoung/chatgpt-with-dalle/main/img/style_niji.PNG")
+response3 = requests.get("https://raw.githubusercontent.com/Lee-Siyoung/chatgpt-with-dalle/main/img/quality.PNG")
+response4 = requests.get("https://raw.githubusercontent.com/Lee-Siyoung/chatgpt-with-dalle/main/img/stylize.PNG")
+img = Image.open(BytesIO(response.content))
+img2 = Image.open(BytesIO(response2.content))
+img3 = Image.open(BytesIO(response3.content))
+img4 = Image.open(BytesIO(response4.content))
 st.write("# Welcome to image create Web! 👋")
 
 
