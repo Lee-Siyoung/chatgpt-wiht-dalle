@@ -7,10 +7,10 @@ st.set_page_config(
     page_title = "ChatGPT with DALL-E",
     page_icon="👋"
 )
-img = Image.open('img/style.png')
-img2 = Image.open('img/style_niji.png')
-img3 = Image.open('img/quality.png')
-img4 = Image.open('img/stylize.png')
+img = Image.open('./img/style.png')
+img2 = Image.open('./img/style_niji.png')
+img3 = Image.open('./img/quality.png')
+img4 = Image.open('./img/stylize.png')
 st.write("# Welcome to image create Web! 👋")
 
 
